@@ -75,7 +75,7 @@ btnUp.addEventListener();
 
 
 VANTA.WAVES({
-    el: "#vantaall",
+    el: "#black-block",
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
@@ -83,8 +83,18 @@ VANTA.WAVES({
     minWidth: 200.00,
     scale: 1.00,
     scaleMobile: 1.00,
-    color: 0x359aa0,
+    color: 0x90909,
     waveSpeed: 1.00,
     shininess: 0.00,
     zoom: 0.70
 })
+
+function checkScreenWidth() {
+    if (window.innerWidth <= 1000) { // Замените 600 на ваш максимальный порог
+        VANTA.WAVES; // Вызов вашей функции
+    }
+}
+
+// Проверка при загрузке страницы и при изменении размеров окна
+window.addEventListener('load', checkScreenWidth);
+window.addEventListener('resize', checkScreenWidth);
