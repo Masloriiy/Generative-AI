@@ -10,7 +10,7 @@ body{
     background-size: 100% auto;
 }
 .container{
-    margin: 0 13%;
+    margin: 0 auto;
     width: 1400px;
 }
 
@@ -244,9 +244,7 @@ body{
 
 
 .black-block {
-    background-image: url("stat.png");
-    padding: 80px 0;
-    background-size: cover;
+    padding: 50px 0;
 }
 
 .stat-title {
@@ -328,30 +326,6 @@ body{
     color: white;
 }
 
-.gallery-content {
-    display: flex;
-    justify-content: center;
-}
-
-.gallery-left {
-    margin-right: 30px;
-}
-
-.gallery-left .gallery-down img,
-.gallery-right .gallery-up img {
-    margin-right: 15px;
-}
-
-.gallery-down, .gallery-up {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-
-
-
-
 
 
 
@@ -363,28 +337,6 @@ footer {
 }
 
 
-
-
-@media (max-width: 1500px){
-    .gallery-content{
-        display: block;
-    }
-
-    .img-gal, .gallery-up, .gallery-down{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .img-gal{
-        margin-bottom: 20px;
-    }
-
-    .gallery-left{
-        margin-right: 0;
-    }
-    .container
-}
 
 @media (max-width: 1300px){
     .carts-holder, .carts-holder2{
@@ -400,7 +352,6 @@ footer {
 
     .cart-button {
         margin: 20px auto 0; /* Центрируем кнопку по горизонтали и добавляем отступ сверху */
-
         display: block; /* Сделаем кнопку блочным элементом, чтобы можно было применить margin auto */
     }
 
@@ -482,13 +433,13 @@ footer {
 .accordion a:hover,
 .accordion a:hover::after {
     cursor: pointer;
-    color: #ffffff;
+    color: #0d8bde;
 }
 .accordion a:hover::after {
-    border: 1px solid #ffffff;
+    border: 1px solid #0d8bde;
 }
 .accordion a.active {
-    color: #ffffff;
+    color: #0d8bde;
     border-bottom: 1px solid #ffffff;
 }
 .accordion a::after {
@@ -511,8 +462,8 @@ footer {
 .accordion a.active::after {
     font-family: 'Ionicons';
     content: '\f209';
-    color: #ffffff;
-    border: 1px solid #ffffff;
+    color: #7288a2;
+    border: 1px solid #7288a2;
 }
 .accordion .content {
     opacity: 0;
@@ -528,7 +479,7 @@ footer {
 .accordion .content p {
     font-size: 1rem;
     font-weight: 300;
-    color: white;
+    color: #000000;
 }
 .accordion .content.active {
     opacity: 1;
@@ -612,4 +563,25 @@ footer {
         background-color: #0060ef;
 
     }
+}
+
+.flex-caption {
+    width: 96%;
+    padding: 2%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-size: 18px;
+    line-height: 15px;
+}
+
+.flexslider {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.flexslider img {
+    max-width: 100%;
+    height: auto;
 }

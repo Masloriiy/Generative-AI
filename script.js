@@ -88,13 +88,3 @@ VANTA.WAVES({
     shininess: 0.00,
     zoom: 0.70
 })
-
-function checkScreenWidth() {
-    if (window.innerWidth <= 1000) { // Замените 600 на ваш максимальный порог
-        VANTA.WAVES; // Вызов вашей функции
-    }
-}
-
-// Проверка при загрузке страницы и при изменении размеров окна
-window.addEventListener('load', checkScreenWidth);
-window.addEventListener('resize', checkScreenWidth);
