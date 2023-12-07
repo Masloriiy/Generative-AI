@@ -74,17 +74,19 @@ const btnUp = {
 btnUp.addEventListener();
 
 
-VANTA.WAVES({
-    el: "#black-block",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    color: 0x90909,
-    waveSpeed: 1.00,
-    shininess: 0.00,
-    zoom: 0.70
-})
+if (window.innerWidth > 767) {
+    VANTA.WAVES({
+        el: "#black-block",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x90909,
+        waveSpeed: 1.00,
+        shininess: 0.00,
+        zoom: 0.70
+    });
+}

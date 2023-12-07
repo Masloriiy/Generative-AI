@@ -194,11 +194,9 @@ body{
 
 .whatis-stat{
     display: flex;
-    width: 1000px;
     justify-content: space-between;
     margin-top: 40px;
     margin-left: 5vh;
-
 }
 
 .stat-item{
@@ -303,10 +301,11 @@ body{
 
 .news-image {
     padding-top: 10px;
-    max-width: 50%;
+    max-width: 100%;
 }
 .news-img {
     padding-top: 15px;
+    max-width: 100%;
 }
 
 
@@ -386,12 +385,35 @@ footer {
     }
 
     .container{
-        margin: auto 40px;
+        margin: auto 0;
+        width: auto;
     }
 
     .stat-item{
         font-size: 23px;
     }
+
+    .header-title{
+        font-size: 40px;
+    }
+
+    .whatis-stat {
+        flex-direction: column; /* Изменяем на вертикальное расположение на телефонах */
+        align-items: center; /* Центрируем элементы на телефонах */
+    }
+
+    .stat-item {
+        margin: 0; /* Убираем горизонтальные отступы между элементами на телефонах */
+        text-align: center;
+        font-size: 40px;
+        color: white;
+        margin-bottom: 20px; /* Добавляем вертикальный отступ между элементами на телефонах */
+        background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый фон */
+        padding: 20px; /* Добавляем отступы вокруг текста на телефонах */
+        border-radius: 10px; /* Добавляем скругление углов для эффекта карточки */
+    }
+
+
 }
 
 
