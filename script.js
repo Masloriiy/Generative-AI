@@ -90,3 +90,46 @@ if (window.innerWidth > 767) {
         zoom: 0.70
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var menuToggle = document.getElementById("menu__toggle");
+    var menuItems = document.querySelectorAll(".menu__item");
+    var menuBox = document.querySelector(".menu__box");
+
+    var scrollPosition = { top: 0, left: 0 };
+
+    menuToggle.addEventListener("change", function () {
+        if (menuToggle.checked) {
+            // Меню открывается
+            scrollPosition = { top: window.scrollY, left: window.scrollX };
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollPosition.top}px`;
+            document.body.style.left = `-${scrollPosition.left}px`;
+
+            // Добавляем обработчик для закрытия меню при клике вне его области
+            document.addEventListener("click", closeMenuOnClickOutside);
+        } else {
+            // Меню закрывается
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.left = "";
+            window.scrollTo({ top: scrollPosition.top, left: scrollPosition.left, behavior: 'smooth' });
+
+            // Удаляем обработчик после закрытия меню
+            document.removeEventListener("click", closeMenuOnClickOutside);
+        }
+    });
+
+    menuItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            menuToggle.checked = false;
+        });
+    });
+
+    function closeMenuOnClickOutside(event) {
+        // Проверяем, было ли нажатие вне меню
+        if (!menuBox.contains(event.target) && event.target !== menuToggle) {
+            menuToggle.checked = false;
+        }
+    }
+});
