@@ -84,52 +84,34 @@ if (window.innerWidth > 767) {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0x90909,
         waveSpeed: 1.00,
-        shininess: 0.00,
-        zoom: 0.70
+        shininess: 0.00
     });
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    var menuToggle = document.getElementById("menu__toggle");
-    var menuItems = document.querySelectorAll(".menu__item");
-    var menuBox = document.querySelector(".menu__box");
+    // Массив с путями к изображениям
+    var images = ["bgimage1.png", "bgimage.png", "bgimage3.png", "bgimages4.png", "bgimages5.png"];
 
-    var scrollPosition = { top: 0, left: 0 };
+    // Генерация случайного индекса из массива
+    var randomIndex = Math.floor(Math.random() * images.length);
 
-    menuToggle.addEventListener("change", function () {
-        if (menuToggle.checked) {
-            // Меню открывается
-            scrollPosition = { top: window.scrollY, left: window.scrollX };
-            document.body.style.position = "fixed";
-            document.body.style.top = `-${scrollPosition.top}px`;
-            document.body.style.left = `-${scrollPosition.left}px`;
+    // Получение случайного пути к изображению
+    var randomImagePath = images[randomIndex];
 
-            // Добавляем обработчик для закрытия меню при клике вне его области
-            document.addEventListener("click", closeMenuOnClickOutside);
-        } else {
-            // Меню закрывается
-            document.body.style.position = "";
-            document.body.style.top = "";
-            document.body.style.left = "";
-            window.scrollTo({ top: scrollPosition.top, left: scrollPosition.left, behavior: 'smooth' });
+    // Установка случайного изображения в качестве фона body
+    document.body.style.backgroundImage = "url('" + randomImagePath + "')";
+});
 
-            // Удаляем обработчик после закрытия меню
-            document.removeEventListener("click", closeMenuOnClickOutside);
-        }
-    });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var menuToggle = document.getElementById('menu__toggle');
+    var menuItems = document.querySelectorAll('.menu__item');
 
     menuItems.forEach(function (item) {
-        item.addEventListener("click", function () {
+        item.addEventListener('click', function () {
             menuToggle.checked = false;
         });
     });
-
-    function closeMenuOnClickOutside(event) {
-        // Проверяем, было ли нажатие вне меню
-        if (!menuBox.contains(event.target) && event.target !== menuToggle) {
-            menuToggle.checked = false;
-        }
-    }
 });

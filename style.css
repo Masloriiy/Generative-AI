@@ -6,7 +6,6 @@
 body{
     margin: 0;
     font-family: 'DM Sans', sans-serif;
-    background-image: url(IrF.gif);
     background-size: 100% auto;
 }
 .container{
@@ -157,9 +156,11 @@ body{
     margin-left: 80px;
     margin-top: 20px;
     transition: background-color 0.3s linear;
+    text-align: center;
 }
 .cart-button:hover{
     background-color: #0c22a6;
+    color: white;
 }
 
 
@@ -183,13 +184,17 @@ body{
     text-align: center;
     margin-top: 21px;
     color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .whatis-desc{
     font-size: 26px;
     width: 500px;
     text-align: center;
-    color: #7c7b7b;
+    color: #dcdcdc;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .whatis-stat {
@@ -269,6 +274,7 @@ body{
     padding-top: 100px;
     margin-bottom: 60px;
     color: white;
+
 }
 .news-content {
     display: flex;
@@ -344,9 +350,9 @@ footer {
 
 @media (max-width: 1300px){
     .carts-holder, .carts-holder2{
-        display: block;
-        flex-direction: column; /* Один под другим на узких экранах */
-        align-items: center;
+        display: flex;
+        flex-wrap: wrap; /* Добавлено */
+        justify-content: center;
     }
 
     .cart, .cart2{
@@ -399,7 +405,7 @@ footer {
     }
 
     .header-title{
-        font-size: 37px;
+        font-size: 43px;
     }
 
     .whatis-stat {
@@ -413,9 +419,9 @@ footer {
         font-size: 40px;
         color: white;
         margin-bottom: 20px; /* Добавляем вертикальный отступ между элементами на телефонах */
-        background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый фон */
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
         padding: 20px; /* Добавляем отступы вокруг текста на телефонах */
-        border-radius: 10px; /* Добавляем скругление углов для эффекта карточки */
     }
 
 
@@ -532,42 +538,27 @@ footer {
     justify-content: center;
     font-size: 20px;
     align-items: center;
-}
-.faq-button{
-    background-color: white;
-    color: black;
-    border-radius: 211px;
-    display: flex;
-    width: 250px;
-    height: 50px;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: none;
-    margin-left: 25px;
+
 }
 
 .btn-up {
     position: fixed;
     background-color: #0048ff;
-    right: 50px;
-    bottom: 30px;
-    border-radius: 35px;
+    right: 18px;
+    bottom: 100px;
+    border-radius: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 0.15s ease-in-out, transform 0.3s ease-in-out;
     color: #fff;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     opacity: 1;
     transform: translateY(0);
-    z-index: 1000;
 }
+
 .btn-up::before {
     content: "";
     text-align: center;
