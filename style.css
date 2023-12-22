@@ -356,13 +356,13 @@ footer {
 
 
 @media (max-width: 1300px){
-    .carts-holder, .carts-holder2{
+    .carts-holder, .carts-holder2, .persons-holder{
         display: flex;
         flex-wrap: wrap; /* Добавлено */
         justify-content: center;
     }
 
-    .cart, .cart2{
+    .cart, .cart2, .person{
         margin: 20px auto;
         width: 100%;
     }
@@ -386,7 +386,7 @@ footer {
 }
 
 @media (max-width: 1000px){
-    .cart, .cart2{
+    .cart, .cart2, .person{
         width: 100%;
         margin-top: 30px;
         padding-bottom: 20px;
@@ -412,7 +412,7 @@ footer {
     }
 
     .header-title{
-        font-size: 43px;
+        font-size: 40px;
     }
 
     .whatis-stat {
@@ -646,9 +646,10 @@ footer {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #0080ff;
     transition-duration: .25s;
 }
+
 .menu__btn > span::before {
     content: '';
     top: -8px;
@@ -684,4 +685,39 @@ footer {
 }
 .menu__item:hover {
     background-color: #CFD8DC;
+}
+
+
+.persons-holder{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.person{
+    width: 350px;
+    margin: 0 15px 30px 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.person-image{
+    display: flex;
+    justify-content: center;
+    padding-top: 31px;
+}
+.person-title{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+}
+.person-desc{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #ffffff;
 }
