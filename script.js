@@ -74,22 +74,6 @@ const btnUp = {
 btnUp.addEventListener();
 
 
-if (window.innerWidth > 767) {
-    VANTA.WAVES({
-        el: "#black-block",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        waveSpeed: 1.00,
-        shininess: 0.00
-    });
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
     // Массив с путями к изображениям
     var images = ["bgimage1.png", "bgimage.png", "bgimage3.png", "bgimages4.png", "bgimages5.png"];
