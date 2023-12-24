@@ -269,6 +269,7 @@ body{
     text-align: center;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .black-block .mask{
@@ -282,6 +283,7 @@ body{
 
 .black-block .stat-item{
     z-index: 3;
+    transition: transform 0.5s ease;
 }
 
 .black-block .stat-title {
@@ -292,8 +294,8 @@ body{
     margin-bottom: 20px;
     position: relative;
     z-index: 3;
+    transition: transform 0.5s ease;
 }
-
 
 
 

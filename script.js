@@ -92,10 +92,29 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     var menuToggle = document.getElementById('menu__toggle');
     var menuItems = document.querySelectorAll('.menu__item');
+    var menuBox = document.querySelector('.menu__box');
 
     menuItems.forEach(function (item) {
         item.addEventListener('click', function () {
             menuToggle.checked = false;
         });
+    });
+
+    document.addEventListener('click', function (event) {
+        // Check if the clicked element is outside the menu
+        if (!menuBox.contains(event.target) && !menuToggle.contains(event.target)) {
+            menuToggle.checked = false;
+        }
+    });
+});
+
+
+window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY;
+    const parallaxElements = document.querySelectorAll('.black-block .stat-item, .black-block .stat-title');
+
+    parallaxElements.forEach(element => {
+        let parallaxSpeed = window.innerWidth > 767 ? 8 : 50; // Установите разную скорость для больших и маленьких экранов
+        element.style.transform = `translateY(${-scrollY / parallaxSpeed}px)`;
     });
 });
